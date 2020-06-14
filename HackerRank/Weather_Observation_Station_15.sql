@@ -1,7 +1,6 @@
-Q Write a query that prints a list of employee names (i.e.: the name attribute) for employees in Employee having a salary greater than  per month who have been employees for less than  months. Sort your result by ascending employee_id.
+/*Q Consider  and  to be two points on a 2D plane where  are the respective minimum and maximum values of Northern Latitude (LAT_N) and  are the respective minimum and maximum values of Western Longitude (LONG_W) in STATION.
+Query the Euclidean Distance between points  and  and format your answer to display  decimal digits.
 
-Ans Mysql
+ans Mysql */
 
-select name from Employee
-where salary >= 2000 and months < 10
-order by employee_id asc
+select round(sqrt(power((max(lat_n)-min(lat_n)),2) + power((max(long_w)-min(long_w)),2)),4) from Station
